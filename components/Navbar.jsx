@@ -1,4 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
+// May need to add 'useEffect' & 'useContext' later
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
@@ -7,7 +8,8 @@ import Link from 'next/link';
 import images from '../assets';
 import { Button } from './';
 
-const MenuItems = ({ isMobile, active, setActive }) => {
+// May need to add 'setActive' to MenuItems props later
+const MenuItems = ({ isMobile, active }) => {
   const generateLink = (i) => {
     switch (i) {
       case 0:
