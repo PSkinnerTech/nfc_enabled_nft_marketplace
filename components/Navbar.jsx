@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import images from '../assets';
-import { Button } from './';
+import { Button } from './Button';
 
 // May need to add 'setActive' to MenuItems props later
 const MenuItems = ({ isMobile, active }) => {
