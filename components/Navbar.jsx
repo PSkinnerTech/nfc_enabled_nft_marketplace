@@ -55,7 +55,7 @@ const MenuItems = ({ isMobile, active }) => {
               <Link href={generateLink(i)}>{item}</Link>
             )}
           </li>
-        )
+        ),
       )}
     </ul>
   );
