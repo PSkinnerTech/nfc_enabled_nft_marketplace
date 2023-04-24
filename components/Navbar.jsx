@@ -18,10 +18,14 @@ const MenuItems = ({ isMobile, active }) => {
         return '/created-nfts';
       case 2:
         return '/my-nfts';
+      case 3:
+        return 'https://app.deform.cc/form/3e5434ba-4018-430a-bfa6-171bfb825fbd/';
       default:
         return '/';
     }
   };
+
+  const isExternalLink = (i) => i === 3;
 
   return (
     <ul
@@ -29,24 +33,36 @@ const MenuItems = ({ isMobile, active }) => {
         isMobile && 'flex-col h-full'
       }`}
     >
-      {['Explore NFTs', 'Create NFTs', 'My NFTs'].map((item, i) => (
-        <li
-          key={i}
-          className={`flex flex-row items-center font-poppins font-semibold text-base dark:hover:text-white hover:text-nft-dartk mx-3 ${
-            active === item
-              ? 'dark:text-white text-nft-black-1'
-              : 'dark:text-nft-gray-3 text nft-gray-2'
-          }`}
-        >
-          <Link href={generateLink(i)}>{item}</Link>
-        </li>
-      ))}
+      {['Explore NFTs', 'Create NFTs', 'My NFTs', 'Become a Creator'].map(
+        (item, i) => (
+          <li
+            key={i}
+            className={`flex flex-row items-center font-poppins font-semibold text-base dark:hover:text-white hover:text-nft-dartk mx-3 ${
+              active === item
+                ? 'dark:text-white text-nft-black-1'
+                : 'dark:text-nft-gray-3 text nft-gray-2'
+            }`}
+          >
+            {isExternalLink(i) ? (
+              <a
+                href={generateLink(i)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item}
+              </a>
+            ) : (
+              <Link href={generateLink(i)}>{item}</Link>
+            )}
+          </li>
+        )
+      )}
     </ul>
   );
 };
 
 const ButtonGroup = ({ setActive, router }) => {
-  const hasConnected = true;
+  const hasConnected = false;
 
   return hasConnected ? (
     <Button
