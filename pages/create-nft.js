@@ -1,5 +1,5 @@
-import { useState, useMemo, useCallback, useContext } from 'react';
-import { useRouter } from 'next/router';
+import { useState, useMemo, useCallback } from 'react';
+// import { useRouter } from 'next/router';
 import { useDropzone } from 'react-dropzone';
 
 import Image from 'next/image';
@@ -9,7 +9,7 @@ import { Input } from '../components';
 import images from '../assets';
 
 const CreateNFT = () => {
-  const [fileUrl, setFileUrl] = useState(null);
+  const [fileUrl] = useState(null);
   const [formInput, setFormInput] = useState({
     price: '',
     name: '',
