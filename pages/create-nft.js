@@ -82,19 +82,19 @@ const CreateNFT = () => {
           inputType="input"
           title="Name"
           placeholder="NFT Name"
-          handleClick={e => setFormInput({ ...formInput, name: e.target.value })}
+          handleClick={(e) => setFormInput({ ...formInput, name: e.target.value })}
         />
         <Input
           inputType="textarea"
           title="Description"
           placeholder="NFT Description"
-          handleClick={e => setFormInput({ ...formInput, description: e.target.value })}
+          handleClick={(e) => setFormInput({ ...formInput, description: e.target.value })}
         />
         <Input
           inputType="number"
           title="Price"
           placeholder="NFT Price"
-          handleClick={e => setFormInput({ ...formInput, price: e.target.value })}
+          handleClick={(e) => setFormInput({ ...formInput, price: e.target.value })}
         />
 
         <div className="mt-7 w-full flex justify-end">
