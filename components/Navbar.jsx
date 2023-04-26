@@ -15,7 +15,7 @@ const MenuItems = ({ isMobile, active }) => {
       case 0:
         return '/';
       case 1:
-        return '/created-nfts';
+        return '/create-nft';
       case 2:
         return '/my-nfts';
       case 3:
@@ -28,35 +28,24 @@ const MenuItems = ({ isMobile, active }) => {
   const isExternalLink = (i) => i === 3;
 
   return (
-    <ul
-      className={`list-none flexCenter flex-row ${
-        isMobile && 'flex-col h-full'
-      }`}
-    >
-      {['Explore NFTs', 'Create NFTs', 'My NFTs', 'Become a Creator'].map(
-        (item, i) => (
-          <li
-            key={i}
-            className={`flex flex-row items-center font-poppins font-semibold text-base dark:hover:text-white hover:text-nft-dartk mx-3 ${
-              active === item
-                ? 'dark:text-white text-nft-black-1'
-                : 'dark:text-nft-gray-3 text nft-gray-2'
-            }`}
-          >
-            {isExternalLink(i) ? (
-              <a
-                href={generateLink(i)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {item}
-              </a>
-            ) : (
-              <Link href={generateLink(i)}>{item}</Link>
-            )}
-          </li>
-        ),
-      )}
+    <ul className={`list-none flexCenter flex-row ${isMobile && 'flex-col h-full'}`}>
+      {['Explore NFTs', 'Create NFTs', 'My NFTs', 'Become a Creator'].map((item, i) => (
+        <li
+          key={i}
+          className={`flex flex-row items-center font-poppins font-semibold text-base dark:hover:text-white hover:text-nft-dartk mx-3 ${
+            active === item
+              ? 'dark:text-white text-nft-black-1'
+              : 'dark:text-nft-gray-3 text nft-gray-2'
+          }`}>
+          {isExternalLink(i) ? (
+            <a href={generateLink(i)} target="_blank" rel="noopener noreferrer">
+              {item}
+            </a>
+          ) : (
+            <Link href={generateLink(i)}>{item}</Link>
+          )}
+        </li>
+      ))}
     </ul>
   );
 };
@@ -88,30 +77,14 @@ const Navbar = () => {
       <div className="flex flex-1 flex-row justify-start">
         <Link href="/">
           <div className="flexCenter md:hidden cursor-pointer">
-            <p className="dark:text-white text-nft-black-1 font-extrabold text-lg">
-              SHOP
-            </p>
-            <Image
-              src={images.logo02}
-              objectFit="contain"
-              width={32}
-              height={32}
-              alt="logo"
-            />
-            <p className="dark:text-white text-nft-black-1 font-extrabold text-lg">
-              LYNx
-            </p>
+            <p className="dark:text-white text-nft-black-1 font-extrabold text-lg">SHOP</p>
+            <Image src={images.logo02} objectFit="contain" width={32} height={32} alt="logo" />
+            <p className="dark:text-white text-nft-black-1 font-extrabold text-lg">LYNx</p>
           </div>
         </Link>
         <Link href="/">
           <div className="hidden md:flex">
-            <Image
-              src={images.logo02}
-              objectFit="contain"
-              width={32}
-              height={32}
-              alt="logo"
-            />
+            <Image src={images.logo02} objectFit="contain" width={32} height={32} alt="logo" />
           </div>
         </Link>
       </div>
@@ -125,8 +98,7 @@ const Navbar = () => {
           />
           <label
             htmlFor="checkbox"
-            className="flexBetween w-8 h-4 bg-black rounded-2xl p-1 relative label"
-          >
+            className="flexBetween w-8 h-4 bg-black rounded-2xl p-1 relative label">
             <i className="fas fa-sun" />
             <i className="fas fa-moon" />
             <div className="w-3 h-3 absolute bg-white rounded-full ball" />
