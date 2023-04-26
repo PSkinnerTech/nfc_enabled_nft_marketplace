@@ -21,13 +21,7 @@ const CreateNFT = () => {
     // upload image to the ipfs
   }, []);
 
-  const {
-    getRootProps,
-    getInputProps,
-    isDragActive,
-    isDragAccept,
-    isDragReject,
-  } = useDropzone({
+  const { getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject } = useDropzone({
     onDrop,
     accept: 'image/*',
     maxSize: 5000000,
@@ -49,9 +43,7 @@ const CreateNFT = () => {
           Create new item
         </h1>
         <div className="mt-16">
-          <p className="font-poppins dark:text-white text-nft-black-1">
-            Upload File
-          </p>
+          <p className="font-poppins dark:text-white text-nft-black-1">Upload File</p>
           <div className="mt-4">
             <div {...getRootProps()} className={fileStyle}>
               <input {...getInputProps()} />
@@ -90,25 +82,19 @@ const CreateNFT = () => {
           inputType="input"
           title="Name"
           placeholder="NFT Name"
-          handleClick={(e) =>
-            setFormInput({ ...formInput, name: e.target.value })
-          }
+          handleClick={e => setFormInput({ ...formInput, name: e.target.value })}
         />
         <Input
           inputType="textarea"
           title="Description"
           placeholder="NFT Description"
-          handleClick={(e) =>
-            setFormInput({ ...formInput, description: e.target.value })
-          }
+          handleClick={e => setFormInput({ ...formInput, description: e.target.value })}
         />
         <Input
           inputType="number"
           title="Price"
           placeholder="NFT Price"
-          handleClick={(e) =>
-            setFormInput({ ...formInput, price: e.target.value })
-          }
+          handleClick={e => setFormInput({ ...formInput, price: e.target.value })}
         />
 
         <div className="mt-7 w-full flex justify-end">
